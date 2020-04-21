@@ -1,0 +1,19 @@
+{
+  "name": "dinusha-portfolio",
+  "version": "1.0.0",
+  "description": "DInusha Portfolio Test ",
+  "author": "Julien Charton",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "deploy": "nuxt generate && firebase deploy"
+  },
+  "dependencies": {
+    "nuxt": "^2.0.0"
+  },
+  "devDependencies": {
+    "@nuxt/typescript-build": "^0.6.0"
+  }
+}
