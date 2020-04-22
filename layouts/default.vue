@@ -1,24 +1,16 @@
 <template>
-  <div>
-    <sidebar />
+  <div class="container">
     <nuxt />
   </div>
 </template>
 <script>
-import sidebar from "@/components/sidebar";
 export default {
-  components: {
-    sidebar
-  }
+  components: {}
 };
 </script>
 <style>
 .container {
   margin: 96px;
-  min-height: 100vh;
-  display: flex;
-  justify-content: start;
-  align-items: start;
 }
 :root {
   font-size: 16px;

@@ -11,7 +11,8 @@
     "deploy": "nuxt generate && firebase deploy"
   },
   "dependencies": {
-    "nuxt": "^2.0.0"
+    "nuxt": "^2.0.0",
+    "vue-scrollactive": "^0.8.0"
   },
   "devDependencies": {
     "@nuxt/typescript-build": "^0.6.0"
