@@ -1,82 +1,39 @@
 <template>
-  <div class="wrapper">
-    <sidebar />
-
-    <div class="main">
-      <blog-post v-for="post in posts" :key="post" v-bind="post" :id="post.id" />
-    </div>
+  <div class="main">
+    <h1>Dinusha RATNAWEERA</h1>
+    <p>producer</p>
+    <span class="vertical-line"></span>
+    <nuxt-link class="link" to="/thePretendOne">Portfolio</nuxt-link>
   </div>
 </template>
-
-<script>
-import blogPost from "../components/blogpost";
-import sidebar from "@/components/sidebar";
-
-export default {
-  components: {
-    blogPost,
-    sidebar
-  },
-  methods: {
-    handleScroll() {
-      this.scrolled = window.scrollY > 0;
-      console.log(this.scrolled);
-    }
-  },
-  beforeMount() {
-    window.addEventListener("scroll", this.handleScroll);
-  },
-  beforeDestroy() {
-    window.removeEventListener("scroll", this.handleScroll);
-  },
-  data() {
-    return {
-      scrolled: false,
-      posts: [
-        {
-          title: "The pretend One",
-          id: "thePretendOne",
-          banner: "The-pretendpone-banner.jpg",
-          type: "Feature Film",
-          year: "2017",
-          description:
-            "A heartwarming tale about a young female farmer, whose imaginary friend of the last 20 years only realizes he is in love with her when she starts to fall for a real man. Unable to face losing her, he must fight to become real himself.",
-          credentials: {
-            Director: ["Tony Prescott"],
-            Producers: ["Tony Prescott & Dinusha Ratnaweera"],
-            "Executive Producers": ["Kristina Ceyton & Samantha Jennings"],
-            Cast: [
-              "Geraldine Hakewill, Michael Whalley, Benedict Wall & David Field"
-            ],
-            Website: ["www.thepretendonefilm.com"]
-          }
-        },
-        {
-          title: "The pretend One",
-          banner: "The-pretendpone-banner.jpg",
-          type: "Feature Film",
-          year: "2017",
-          description:
-            "A heartwarming tale about a young female farmer, whose imaginary friend of the last 20 years only realizes he is in love with her when she starts to fall for a real man. Unable to face losing her, he must fight to become real himself.",
-          credentials: {
-            Director: ["Tony Prescott"],
-            Producers: ["Tony Prescott & Dinusha Ratnaweera"],
-            "Executive Producers": ["Kristina Ceyton & Samantha Jennings"],
-            Cast: [
-              "Geraldine Hakewill, Michael Whalley, Benedict Wall & David Field"
-            ],
-            Website: ["www.thepretendonefilm.com"]
-          }
-        }
-      ]
-    };
-  }
-};
-</script>
-
-<style>
+<style scoped>
+.link:hover {
+  cursor: pointer;
+  border-bottom: 1px solid black;
+}
+h1 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+p {
+  color: var(--text-primary-200);
+}
 .main {
   margin-left: 17rem;
   padding: 0 0 0 6rem;
+  display: flex;
+  align-content: center;
+  height: calc(100vh - 96px - 96px);
+  margin: 0 auto;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.vertical-line {
+  display: inline-block;
+  border-left: 1px solid #ccc;
+  margin: 8px 10px;
+  height: 100px;
 }
 </style>

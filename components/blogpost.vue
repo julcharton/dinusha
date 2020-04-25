@@ -1,13 +1,13 @@
 <template>
   <div class="blog-post">
-    <div class="banner">
+    <!-- <div class="banner">
       <img v-bind:src="banner" />
-    </div>
+    </div>-->
     <div class="content">
       <div class="main-title">{{title}}</div>
-      <div class="main-subtitle">Feature Film, 2017</div>
+      <div class="main-subtitle">{{type}}, {{year}}</div>
       <div class="description">
-        <p>A heartwarming tale about a young female farmer, whose imaginary friend of the last 20 years only realizes he is in love with her when she starts to fall for a real man. Unable to face losing her, he must fight to become real himself.</p>
+        <p>{{description}}</p>
       </div>
     </div>
     <div v-for="(value, name) in credentials" :key="name">
@@ -16,18 +16,45 @@
         <p v-for="n in value" :key="n">{{n}}</p>
       </div>
     </div>
+    <div class="iframe-container">
+      <iframe
+        :src="`https://player.vimeo.com/video/${videoid}?title=0&byline=0&portrait=0`"
+        frameborder="0"
+        allow="autoplay; fullscreen"
+        allowfullscreen
+      ></iframe>
+    </div>
   </div>
 </template>
 <script>
 export default {
-  props: {
-    title: String,
-    banner: String,
-    credentials: Object
-  }
+  mounted() {},
+  props: [
+    "title",
+    "banner",
+    "credentials",
+    "description",
+    "year",
+    "type",
+    "videoid"
+  ]
 };
 </script>
 <style scoped>
+.iframe-container {
+  overflow: hidden;
+  padding-top: 56.25%;
+  position: relative;
+}
+
+.iframe-container iframe {
+  border: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
 .subtitle {
   margin-bottom: 6px;
 }
@@ -56,7 +83,7 @@ p {
 }
 .banner img {
   width: 100%;
-  height: 385px;
+  height: 400px;
   object-fit: cover;
 }
 .blog-post {

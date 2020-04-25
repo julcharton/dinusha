@@ -1,5 +1,15 @@
+import data from './static/data.json'
+let dynamicRoutes = () => {
+  return new Promise(resolve => {
+    resolve(data.map(el => `/${el.id}`))
+  })
+}
+
 
 export default {
+  generate: {
+    routes: dynamicRoutes
+  },
   mode: 'universal',
   /*
   ** Headers of the page
@@ -23,7 +33,7 @@ export default {
   ** Global CSS
   */
   css: [
-
+    '~/assets/main.css'
   ],
   /*
   ** Plugins to load before mounting the App
