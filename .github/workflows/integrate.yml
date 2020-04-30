@@ -10,12 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: perl -i -pe 's/^(version:\s+\d+\.\d+\.)(\d+)(\+)(\d+)$/$1.$2.$3.($4+1)/e' test.txt
-      - name: checkout
-        uses: actions/checkout@master
-        with:
-          ref: master
-      - name: build
-        uses: github-actions-x/hugo@master
+      - run: git add . 
       - name: push
         uses: github-actions-x/commit@v2.6
         with:
