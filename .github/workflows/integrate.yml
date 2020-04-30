@@ -1,0 +1,21 @@
+name: Flutter continous build
+
+on: 
+  pull_request:
+    branches: [master]
+
+jobs:
+  increment_build: 
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: perl -i -pe 's/^(version:\s+\d+\.\d+\.)(\d+)(\+)(\d+)$/$1.$2.$3.($4+1)/e' test.txt
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v4
+        with:
+          author_name: Your Name
+          author_email: mail@example.com
+          message: "Build Number X"
+          add: "test.txt"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
