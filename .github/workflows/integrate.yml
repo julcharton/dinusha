@@ -10,7 +10,19 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: perl -i -pe 's/^(version:\s+\d+\.\d+\.)(\d+)(\+)(\d+)$/$1.$2.$3.($4+1)/e' test.txt
-      - uses: stefanzweifel/git-auto-commit-action@v4.1.6
-          with:
-            commit_message: build number incremented
-            branch: ${{ github.head_ref }}
+      - name: checkout
+        uses: actions/checkout@master
+        with:
+          ref: master
+      - name: build
+        uses: github-actions-x/hugo@master
+      - name: push
+        uses: github-actions-x/commit@v2.6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          push-branch: 'master'
+          commit-message: 'publish'
+          force-add: 'true'
+          files: test.txt
+          name: Julien
+          email: jul.charton@gmail.com 
