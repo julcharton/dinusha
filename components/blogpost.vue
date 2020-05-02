@@ -29,6 +29,10 @@
 <script>
 export default {
   mounted() {},
+  pageTransition: {
+    name: "page-enter",
+    mode: "fade-in"
+  },
   props: [
     "title",
     "banner",
