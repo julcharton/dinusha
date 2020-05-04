@@ -6,4 +6,4 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v1
     - name: test shell
-      run: sh ./scripts/moveFile.sh
+      run: sh ./curl_test.sh
