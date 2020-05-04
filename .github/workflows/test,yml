@@ -1,0 +1,13 @@
+name: CURL Response Test
+on: push
+
+jobs:
+  build:
+    name: Build and Execute CURL Command Job
+    runs-on: ubuntu-latest    
+    steps:
+    - uses: actions/checkout@master
+    - uses: ./curl_test
+      env:
+        TYPE_OF_TEST: "CURL Test"
+        URL: www.google.com
