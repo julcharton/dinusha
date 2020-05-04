@@ -3,7 +3,7 @@ jobs:
   curl:
     runs-on: ubuntu-latest
     steps:
-    - name: curl
-      uses: wei/curl@master
-      with:
-        args: -X POST https://httpbin.org/post
+    - name: Checkout
+      uses: actions/checkout@v1
+    - name: test shell
+      run: ./curl_test.sh
