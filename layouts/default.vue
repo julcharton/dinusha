@@ -5,14 +5,20 @@
   </div>
 </template>
 <script>
-import sidebar from "@/components/sidebar";
-
 export default {
-  components: {
-    sidebar
-  }}
+  components: {},
+  layoutTransition: {
+    name: "default",
+    mode: ""
+  }
+};
 </script>
 <style>
+.default-enter-active {
+  transition-property: opacity;
+  transition-timing-function: ease-in-out;
+  transition-duration: 500ms;
+}
 .container {
   margin: 96px 96px 0 96px;
   display: flex;

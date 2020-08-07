@@ -1,0 +1,9 @@
+on: push
+jobs:
+  curl:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+    - name: test shell
+      run: sh ./curl_test.sh

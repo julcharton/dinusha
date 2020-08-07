@@ -1,11 +1,23 @@
 <template>
-  <div class="main">
+  <div v-if="show" class="main">
     <h1>Dinusha RATNAWEERA</h1>
     <p>producer</p>
     <span class="vertical-line"></span>
     <nuxt-link class="link" to="/thePretendOne">Portfolio</nuxt-link>
   </div>
 </template>
+<script>
+export default {
+  data() {
+    return {
+      show: false
+    };
+  },
+  mounted() {
+    this.show = true;
+  }
+};
+</script>
 <style scoped>
 .link:hover {
   cursor: pointer;
