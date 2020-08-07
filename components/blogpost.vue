@@ -41,6 +41,7 @@ export default {
 };
 </script>
 <style scoped>
+
 .iframe-container {
   overflow: hidden;
   padding-top: 56.25%;
@@ -86,6 +87,5 @@ p {
   height: 400px;
   object-fit: cover;
 }
-.blog-post {
-}
+
 </style>

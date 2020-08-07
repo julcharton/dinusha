@@ -19,8 +19,6 @@ p {
   color: var(--text-primary-200);
 }
 .main {
-  margin-left: 17rem;
-  padding: 0 0 0 6rem;
   display: flex;
   align-content: center;
   height: calc(100vh - 96px - 96px);

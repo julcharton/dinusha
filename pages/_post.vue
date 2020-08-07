@@ -1,9 +1,6 @@
 <template>
-  <div class="wrapper">
     <div class="main">
       <blog-post v-bind="post" />
-      
-    </div>
   </div>
 </template>
 
@@ -14,12 +11,9 @@ import { mapState } from "vuex";
 
 export default {
   components: {
-    blogPost,
+    blogPost
   },
-  pageTransition: {
-    name:'page-enter',
-    mode:'fade-in'},
- 
+
   data() {
     return {
       id:this.$route.params.post
@@ -37,8 +31,9 @@ export default {
 </script>
 
 <style>
-.main {
-  margin-left: 17rem;
-  padding: 0 0 0 6rem;
+
+.main{
+  width: stretch;
+  overflow: auto;
 }
 </style>

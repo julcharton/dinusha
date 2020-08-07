@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-  <sidebar />
+    <sidebar v-if="$route.path !== '/' " />
     <nuxt />
   </div>
 </template>
@@ -14,7 +14,9 @@ export default {
 </script>
 <style>
 .container {
-  margin: 96px;
+  margin: 96px 96px 0 96px;
+  display: flex;
+  height: calc(100vh - 96px)
 }
 :root {
   font-size: 16px;
