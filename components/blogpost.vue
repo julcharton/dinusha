@@ -1,11 +1,16 @@
 <template>
   <div class="blog-post">
-    <!-- <div class="banner">
-      <img v-bind:src="banner" />
-    </div>-->
     <div class="content">
       <div class="main-title">{{title}}</div>
       <div class="main-subtitle">{{type}}, {{year}}</div>
+      <div class="iframe-container">
+        <iframe
+          :src="`https://player.vimeo.com/video/${videoid}?title=0&byline=0&portrait=0`"
+          frameborder="0"
+          allow="autoplay; fullscreen"
+          allowfullscreen
+        ></iframe>
+      </div>
       <div class="description">
         <p>{{description}}</p>
       </div>
@@ -16,14 +21,7 @@
         <p v-for="n in value" :key="n">{{n}}</p>
       </div>
     </div>
-    <div class="iframe-container">
-      <iframe
-        :src="`https://player.vimeo.com/video/${videoid}?title=0&byline=0&portrait=0`"
-        frameborder="0"
-        allow="autoplay; fullscreen"
-        allowfullscreen
-      ></iframe>
-    </div>
+
   </div>
 </template>
 <script>
@@ -81,6 +79,8 @@ p {
 .main-subtitle {
   font-size: 14px;
   color: var(--text-primary-200);
+  margin-bottom: 24px;
+
 }
 .banner img {
   width: 100%;

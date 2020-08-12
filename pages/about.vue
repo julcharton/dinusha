@@ -3,7 +3,7 @@
     <div class="profile-pic">
       <img src="../static/2018crop.png" />
     </div>
-    <div class="main-title">Biographie</div>
+    <div class="main-title">Biography</div>
      <div class="description">
         <p>Dinusha is a Film, TVC and Content Producer based in Sydney, Australia. After graduating in 2004 with a BA (Communications) and following up with Producing and Production Management studies at Sydney’s Metroscreen Film School, Dinusha’s first taste of film was as a Producer’s Attachment on ‘Razzle Dazzle: A Journey Into Dance’ (2005) directed by Darren Ashton.
 </p> 
